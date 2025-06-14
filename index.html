@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Dk-house events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Dk-house events">
+        </div>
+        <h1 class="company-name">Dk-house events</h1>
+        <button class="menu-toggle" aria-label="Menu">☰</button>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Transformez vos événements en moments magiques</h2>
+                <p>Spécialistes en décoration événementielle, nous donnons vie à vos rêves avec élégance et créativité.</p>
+                <a href="contact.html" class="btn">Contactez-Nous</a>
+            </div>
+        </section>
+
+        <section class="about">
+            <h2>Notre Agence</h2>
+            <p>Chez Dk-house events, nous créons des décorations uniques pour vos moments les plus précieux. Notre équipe de décorateurs passionnés transforme chaque espace en une expérience visuelle mémorable, parfaitement adaptée à votre personnalité et vos souhaits.</p>
+            <p>Depuis plus de 10 ans, nous mettons notre expertise au service de vos événements pour créer des atmosphères qui émerveilleront vos invités.</p>
+        </section>
+
+        <section class="services">
+            <h2>Nos Services</h2>
+            <div class="service-container">
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="mariage0.jpg" alt="Décoration Mariage" class="zoomable">
+                    </div>
+                    <div class="service-description">
+                        <h3>Décoration Mariage</h3>
+                        <p>Des arrangements floraux aux centres de table, nous créons un cadre romantique et élégant pour le plus beau jour de votre vie. Personnalisation complète selon votre thème et vos couleurs.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="anniversaire0.jpg" alt="Décoration Anniversaire" class="zoomable">
+                    </div>
+                    <div class="service-description">
+                        <h3>Décoration Anniversaire</h3>
+                        <p>Des concepts créatifs et personnalisés pour célébrer tous les âges. Ballons, bannières, thèmes spéciaux — nous nous occupons de tout pour créer une ambiance festive inoubliable.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="bapteme0.jpg" alt="Décoration Baptême" class="zoomable">
+                    </div>
+                    <div class="service-description">
+                        <h3>Décoration Baptême</h3>
+                        <p>Des décorations douces et élégantes pour célébrer ce moment spirituel important. Nous créons une atmosphère sereine et joyeuse adaptée à cette célébration familiale.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="voiture.jpg" alt="Décoration Voiture" class="zoomable">
+                    </div>
+                    <div class="service-description">
+                        <h3>Décoration Voiture</h3>
+                        <p>Des arrangements floraux élégants et des ornements harmonieux pour décorer le véhicule des mariés ou pour toute occasion spéciale nécessitant un transport décoré avec style.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="dragees0.jpg" alt="Confection de Dragées" class="zoomable">
+                    </div>
+                    <div class="service-description">
+                        <h3>Confection de Dragées</h3>
+                        <p>Des contenants élégants et personnalisés pour vos dragées. Nous proposons une large gamme de boîtes, pochettes et contenants originaux, adaptés à votre événement.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="confirmation0.jpg" alt="Confection de Dragées" class="zoomable">
+                    </div>
+                    <div class="service-description">
+                        <h3>Decoration de Confirmation</h3>
+                        <p>Des contenants élégants et personnalisés pour vos dragées. Nous proposons une large gamme de boîtes, pochettes et contenants originaux, adaptés à votre événement.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="accessoires0.jpg" alt="Confection de Dragées" class="zoomable">
+                    </div>
+                    <div class="service-description">
+                        <h3>Confection d'accesoires</h3>
+                        <p>Des contenants élégants et personnalisés pour vos dragées. Nous proposons une large gamme de boîtes, pochettes et contenants originaux, adaptés à votre événement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dk-house events - Tous droits réservés</p>
+    </footer>
+
+    <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
+    <script>
+        // Effet de zoom sur les images
+        const zoomableImages = document.querySelectorAll('.zoomable');
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-image');
+        const closeModal = document.querySelector('.close-modal');
+
+        zoomableImages.forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            });
+        });
+
+        closeModal.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        // Menu mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+        
+        // Fermer le menu quand un lien est cliqué
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    nav.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

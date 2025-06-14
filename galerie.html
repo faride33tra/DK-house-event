@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie - Dk-house events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Dk-house">
+        </div>
+        <h1 class="company-name">Dk-house events</h1>
+        <button class="menu-toggle" aria-label="Menu">☰</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="galerie.html" class="active">Galerie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-section">
+            <h2>Nos Quelques Réalisations</h2>
+            <p>Découvrez notre portfolio de décorations événementielles. Chaque image représente un projet unique créé avec passion.</p>
+            
+            <div class="gallery-grid">
+                <!-- Mariages -->
+                <div class="gallery-category">
+                    <h3>Mariages</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item">
+                            <img src="mariage0.jpg" alt="Décoration Mariage 1" class="zoomable">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="mariage1.jpg" alt="Décoration Mariage 2" class="zoomable">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="mariage2.jpg" alt="Décoration Mariage 3" class="zoomable">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="mariage3.jpg" alt="Décoration Mariage 4" class="zoomable">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Anniversaires -->
+                <div class="gallery-category">
+                    <h3>Anniversaires</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item">
+                            <img src="anniversaire0.jpg" alt="Décoration Anniversaire 1" class="zoomable">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="anniversaire1.jpg" alt="Décoration Anniversaire 2" class="zoomable">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="anniversaire2.jpg" alt="Décoration Anniversaire 3" class="zoomable">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="anniversaire3.jpg" alt="Décoration Anniversaire 4" class="zoomable">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accessoires -->
+                <div class="gallery-category">
+                    <h3>Accéssoires</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item">
+                            <img src="accessoires0.jpg" alt="Confection Dragées 1" class="zoomable">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="accessoires1.jpg" alt="Confection Dragées 2" class="zoomable">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="accessoires2.jpg" alt="Confection Dragées 3" class="zoomable">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="accessoires3.jpg" alt="Confection Dragées 4" class="zoomable">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dk-house events - Tous droits réservés</p>
+    </footer>
+
+    <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
+    <script>
+        // Effet de zoom sur les images
+        const zoomableImages = document.querySelectorAll('.zoomable');
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-image');
+        const closeModal = document.querySelector('.close-modal');
+
+        zoomableImages.forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            });
+        });
+
+        closeModal.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        // Menu mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+        
+        // Fermer le menu quand un lien est cliqué
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    nav.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

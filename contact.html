@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Dk-house events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Dk-house events">
+        </div>
+        <h1 class="company-name">Dk-house events</h1>
+        <button class="menu-toggle" aria-label="Menu">☰</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h2>Contactez-Nous</h2>
+            <p class="contact-intro">Vous souhaitez transformer votre événement en moment magique ? N'hésitez pas à nous contacter pour discuter de votre projet.</p>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Adresse</h3>
+                    <p>Karpala<br>Ouagadougou, Burkina Faso</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>WhatsApp</h3>
+                    <p>+226 78 62 10 75</p>
+                    <p>+226 63 61 25 26</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>dembeleadjita@example.com</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">🕒</div>
+                    <h3>Horaires</h3>
+                    <p>Lundi-Vendredi: 8h-18h<br>Samedi: 9h-15h<br>Dimanche: Fermé</p>
+                </div>
+            </div>
+            
+            <h2 class="social-title">Nos réseaux</h2>
+            <div class="social-links">
+                <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fapi.whatsapp.com%2Fsend%3Fphone%3D%252B22663612526%26context%3DAfe_x7WG2d0SXTNnHZyswQ16wYgdDgRGYsCig5TREfohtL8is9RyqVDi70JX4L59StT8am24-YVovX8_Lo9Dr1zBOb5J1_PAGodWUn4IO93LwQWK0cYUx2hLy0UaPs2cWEGmXvZYSG5b8ROMSWcXf751NQ%26source%3DFB_Page%26app%3Dfacebook%26entry_point%3Dpage_cta&h=AT07avILoCSOBpOm599DhS5LsvOBuxJrIe-qV8BOLT3XDz4uiDIH2zh19IxJ1Of5QzjRrJYrzHcIQYOwUA1MIOWXQ1eadYFJQmLlN-WY6idicAL4DB_r0X2q5miiLv5zznqB7Q" target="_blank" class="social-link whatsapp">
+                    <span>📱</span> WhatsApp
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100067056278116" target="_blank" class="social-link facebook">
+                    <span>🇫</span> Facebook
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dk-house events - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        // Menu mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+        
+        // Fermer le menu quand un lien est cliqué
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    nav.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
